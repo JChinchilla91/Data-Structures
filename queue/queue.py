@@ -19,42 +19,42 @@ from singly_linked_list import LinkedList, Node
 from stack import Stack
 
 
-# class Queue:
-#     def __init__(self):
-#         self.size = 0
-#         self.storage = []
-    
-#     def __len__(self):
-#         return len(self.storage)
-
-#     def enqueue(self, value):
-#         self.size += 1
-#         self.storage.insert(len(self.storage), value)
-
-#     def dequeue(self):
-#         if len(self.storage) > 0:
-#             return self.storage.pop(0)
-#         return None
-
-
 class Queue:
     def __init__(self):
         self.size = 0
-        self.storage = LinkedList()
-
+        self.storage = []
+    
     def __len__(self):
-        return self.size
+        return len(self.storage)
 
     def enqueue(self, value):
         self.size += 1
-        self.storage.add_to_tail(value)
+        self.storage.insert(len(self.storage), value)
 
     def dequeue(self):
-        if self.size == 0:
-            return
-        self.size -= 1
-        value = self.storage.remove_head()
+        if len(self.storage) > 0:
+            return self.storage.pop(0)
+        return None
 
-        return value
+
+# class Queue:
+#     def __init__(self):
+#         self.size = 0
+#         self.storage = LinkedList()
+
+#     def __len__(self):
+#         return self.size
+
+#     def enqueue(self, value):
+#         self.size += 1
+#         self.storage.add_to_tail(value)
+
+#     def dequeue(self):
+#         if self.size == 0:
+#             return
+#         self.size -= 1
+#         value = self.storage.remove_head()
+
+#         return value
 
     
